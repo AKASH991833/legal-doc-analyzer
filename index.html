@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Legal Document Analyzer - clauses, obligations and risk flags in plain English</title>
+<meta name="description" content="Paste a contract and see its clauses classified, obligations extracted and risk flags raised - auto-renewals, unlimited liability, broad indemnities. Rule-based and fully on-device.">
+<meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="brand-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 3h8l4 4v13a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5 20V4.5A1.5 1.5 0 0 1 6 3Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></svg></span><span>Legal Document Analyzer</span></a>
+    <nav class="site-nav">
+      <a class="nav-link" href="#input">Document</a>
+      <a class="nav-link" href="#report">Report</a>
+      <a class="nav-link" href="#limits">Limits</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="btn btn-ghost btn-icon menu-btn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <section class="hero wrap rise" id="input">
+    <span class="hero-eyebrow">Plain-English contract reading</span>
+    <h1>Know what you are signing</h1>
+    <p class="lede">Paste a contract, NDA or terms of service. The analyzer splits it into clauses, classifies each one, extracts obligations and dates, and raises risk flags - auto-renewals, unlimited liability, one-sided terms - with the exact sentence that triggered each flag.</p>
+    <div class="row row-wrap mt16">
+      <button class="btn btn-primary btn-lg" id="btnSample">Analyze the sample contract</button>
+      <label class="btn btn-ghost btn-lg" for="fileInput">Upload .txt</label>
+      <input type="file" id="fileInput" accept=".txt,.md,.text" hidden>
+    </div>
+  </section>
+
+  <section class="wrap rise rise-1 mt16">
+    <div class="card card-pad-lg">
+      <h3 class="mb16">Your document</h3>
+      <textarea class="input" id="docText" rows="8" placeholder="Paste the full contract text here..."></textarea>
+      <div class="row row-wrap mt16">
+        <button class="btn btn-primary" id="btnAnalyze">Analyze document</button>
+        <span class="small muted" id="docStats"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap rise rise-2 mt24 hidden" id="report">
+    <div class="sec-head">
+      <div><h2>Analysis report</h2><p class="muted" id="reportMeta"></p></div>
+      <div class="row row-wrap">
+        <select class="input" id="fltType" style="width:auto"><option value="">All clause types</option></select>
+        <label class="small muted row" style="gap:6px"><input type="checkbox" id="fltRisk"> Risks only</label>
+        <button class="btn btn-ghost btn-sm" id="btnExport">Export report</button>
+      </div>
+    </div>
+    <div class="grid grid-4 mb16" id="kpis"></div>
+    <div class="card card-pad-lg mb16 hidden" id="riskCard">
+      <h3 class="mb16">Risk flags</h3>
+      <div class="stack" id="riskList"></div>
+    </div>
+    <div class="card card-pad-lg">
+      <h3 class="mb16">Clauses <span class="small muted" id="clauseCount"></span></h3>
+      <div class="stack" id="clauseList"></div>
+    </div>
+  </section>
+
+  <section class="wrap rise rise-3 mt24 mb24" id="limits">
+    <div class="card card-pad-lg">
+      <h2 class="mb16">Honest limits</h2>
+      <ul class="cross-list">
+        <li><b>Not legal advice.</b> This is a reading aid, not a lawyer. Have a professional review anything you sign.</li>
+        <li>Rule-based pattern matching - it catches common clause shapes in English contracts, not every drafting style.</li>
+        <li>It cannot judge whether a term is fair for your situation, only that a pattern exists.</li>
+        <li>Scanned PDFs must be converted to text first; this tool reads plain text only.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="wrap">Legal Document Analyzer - on-device, rule-based · <a href="#limits">not legal advice</a></div></footer>
+<script src="ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
