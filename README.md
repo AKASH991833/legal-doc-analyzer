@@ -36,6 +36,10 @@ Each flag explains what it means in plain English and links to the clause that c
 - It cannot judge whether a term is fair for your situation, only that a pattern exists.
 - Plain text input only; convert scanned PDFs to text first.
 
+## Python version (scikit-learn)
+
+A pro-grade rebuild with TF-IDF clause classification over 12 legal clause types, entity extraction and a risk lexicon lives in [`python-app/`](python-app/) - see its README for run steps. The browser demo above stays the zero-install option.
+
 ## Tech
 
 Vanilla JS, no build step, no dependencies, no network calls. Clause classification uses keyword scoring; risk detection uses curated pattern rules with severity levels.
