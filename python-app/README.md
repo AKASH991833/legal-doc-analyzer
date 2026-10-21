@@ -1,5 +1,10 @@
 # Legal Doc Analyzer - Python (scikit-learn)
 
+> **Live browser demo:** https://akash991833.github.io/legal-doc-analyzer/ - zero-install version. The app in this folder is the pro-grade rebuild; run steps below.
+> **Repo:** https://github.com/AKASH991833/legal-doc-analyzer
+
+![legal-doc-analyzer in action](../screenshots/clauses-mobile.png)
+
 The pro-grade version of the browser demo: offline clause classification with TF-IDF nearest-neighbor over an embedded legal clause corpus, entity extraction (parties, governing law, jurisdiction, notice periods, money, dates, defined terms) and a curated risk lexicon.
 
 ## Stack
